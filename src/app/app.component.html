@@ -1,0 +1,23 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+      <!--this is a place for us to add side-nav code-->
+      <app-navigation-list 
+      (sidenavClose)="sidenav.close()">
+      </app-navigation-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <app-main-menu (sidenavToggle)="sidenav.toggle()"></app-main-menu>
+      <!--in here all the content must reside. We will add a navigation header as well-->
+     <!-- <app-search></app-search>
+      <main fxLayout="row wrap" fxLayoutAlign="center"> -->
+      <main>
+        <router-outlet></router-outlet>
+      </main>  
+      
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+<app-footer fxLayout="row wrap"></app-footer>   

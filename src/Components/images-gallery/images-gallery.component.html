@@ -1,0 +1,8 @@
+
+<ng-container>
+  <button class="NavButton LeftNav" [disabled]="!previousEnabled" (click)="Previous(this)">&#10094;</button>
+  <button class="NavButton RightNav" [disabled]="!nextEnabled" (click)="Next(this)">&#10095;</button>
+  <ng-content></ng-content>
+</ng-container>
+
+<!-- zamiast tych cssow z angular materials https://material.io/tools/icons/?style=baseline wziac arrow_forward -->

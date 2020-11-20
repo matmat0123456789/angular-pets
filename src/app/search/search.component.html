@@ -1,0 +1,46 @@
+
+ <!--<div class="search" fxLayout="row wrap" 
+fxLayoutAlign="flex-start">-->
+ <form fxLayoutAlign="flex-start" fxLayout="row wrap" (ngSubmit)="onSubmit()" #heroForm="ngForm">
+
+  <mat-form-field>
+  <mat-label>Rodzaj</mat-label>
+  <mat-select [(ngModel)]="SearchViewModel.Kind" (selectionChange)="Test()" #kind="ngModel" name="Kind">
+    <mat-option *ngFor="let item of ['Pies', 'Kot']" [value]="item">
+      {{item}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Wiek od</mat-label>
+    <input matInput [(ngModel)]="SearchViewModel.AgeFrom" name="AgeFrom"/>
+  </mat-form-field>
+  <mat-form-field>
+  <mat-label>Wiek do</mat-label>
+    <input matInput [(ngModel)]="SearchViewModel.AgeTo" name="AgeTo"/>
+  </mat-form-field>
+    <mat-form-field>
+  <mat-label>Województwo</mat-label>
+  <mat-select [(ngModel)]="SearchViewModel.Region" name="Region">
+    <mat-option *ngFor="let item of ['Łódzkie', 'Mazowieckie']" [value]="item">
+      {{item}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Miasto</mat-label>
+  <mat-select [(ngModel)]="SearchViewModel.City" name="City">
+    <mat-option *ngFor="let item of ['Kutno', 'Warszawa']" [value]="item">
+      {{item}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div fxLayout="row wrap" class="SearchButtons">
+<button type="submit" fxLayoutAlign="flex-end" 
+mat-raised-button><mat-icon>search</mat-icon>Szukaj</button>
+</div>
+ 
+ </form>
+<!--</div>-->

@@ -1,0 +1,11 @@
+<mat-nav-list>
+  <a mat-list-item routerLink="/Home" (click)="onSidenavClose()">
+      <mat-icon>home</mat-icon> <span class="nav-caption">Strona główna</span>
+  </a>
+  <a mat-list-item routerLink="/MyAccount" (click)="onSidenavClose()">
+      <mat-icon>account_balance</mat-icon><span class="nav-caption">Moje konto</span>
+  </a>
+  <a mat-list-item (click)="onSidenavClose()">
+      <mat-icon>close</mat-icon><span class="nav-caption">Zamknij</span>
+  </a>
+</mat-nav-list>

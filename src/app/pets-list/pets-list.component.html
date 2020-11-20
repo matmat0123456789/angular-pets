@@ -1,0 +1,56 @@
+<app-search></app-search>
+<div class="PetsTable" fxShow.xs="false">
+<table mat-table 
+[dataSource]="dataSource" 
+class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+
+<ng-container matColumnDef="image">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element"> 
+      <img fxFlex="2 2 calc(10em + 10px)" src="{{element.image}}">
+    </td>
+  </ng-container>
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Imie </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="kind">
+    <th mat-header-cell *matHeaderCellDef> Rodzaj </th>
+    <td mat-cell *matCellDef="let element"> {{element.kind}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef> Wiek </th>
+    <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="profile">
+    <th mat-header-cell *matHeaderCellDef> Pokaż profil </th>
+    <td mat-cell *matCellDef="let element"> 
+      <a routerLink="{{element.profile}}">Pokaż profil</a> </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
+<div class="PetsTableXs" fxShow [fxShow.gt-xs]="false">
+  <mat-list>
+  <mat-list-item *ngFor="let item of dataSource">
+    <h3 matLine> {{item.name}} </h3>
+    <img class="Miniature" fxFlex="2 2 calc(10em + 10px)" src="{{item.image}}">
+    <p matLine>
+      <span> {{item.kind}} {{item.age}} </span>
+    </p>
+  </mat-list-item>
+  </mat-list>
+</div>
